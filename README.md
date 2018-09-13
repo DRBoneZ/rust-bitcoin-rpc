@@ -3,7 +3,7 @@ This crate implements a Dogecoin RPC client in rust, this crate doesn't intend t
 
 This was forked from JeanDudey's bitcoin-rpc client, but almost completely rewritten to support some newer dependencies.
 
-### Example: Connecting to bitcoin rpc server
+### Example: Connecting to dogecoin rpc server
 ```rust
 extern crate dogecoinrpc;
 
