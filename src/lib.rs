@@ -18,7 +18,6 @@ pub struct SerializedData {
 pub struct Block {
     pub hash: String,
     pub confirmations: i64,
-    pub strippedsize: i64,
     pub size: i64,
     pub height: i64,
     pub version: i64,
