@@ -110,9 +110,8 @@ pub struct Vout {
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum GetBlockReply {
-    Zero(SerializedData),
-    One(Block),
-    Two(FullBlock)
+    False(SerializedData),
+    True(Block),
 }
 
 #[derive(Deserialize)]
@@ -245,7 +244,7 @@ pub enum RawMemPool {
 }
 
 jsonrpc_client!(pub struct BitcoinRpcClient {
-    pub fn getblock(&mut self, header_hash: String, verbosity: i32) -> RpcRequest<GetBlockReply>;
+    pub fn getblock(&mut self, header_hash: String, verbose: bool) -> RpcRequest<GetBlockReply>;
     pub fn getblockchaininfo(&mut self) -> RpcRequest<BlockChainInfo>;
     pub fn getblockcount(&mut self) -> RpcRequest<i64>;
     pub fn getblockhash(&mut self, block_height: i64) -> RpcRequest<String>;
