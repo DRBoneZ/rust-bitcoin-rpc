@@ -1,13 +1,12 @@
 [package]
 name = "bitcoinrpc"
 version = "0.2.0"
-authors = ["Jean Pierre Dudey <jeandudey@hotmail.com>"]
-repository = "https://github.com/jeandudey/rust-bitcoin-rpc"
-homepage = "https://github.com/jeandudey/rust-bitcoin-rpc"
+authors = ["Jean Pierre Dudey <jeandudey@hotmail.com>", "Aiden McClelland <gagglehoof@gmail.com>"]
+repository = "https://github.com/DRBoneZ/rust-dogecoin-rpc"
+homepage = "https://github.com/DRBoneZ/rust-dogecoin-rpc"
 license = "MIT/Apache-2.0"
 readme = "README.md"
-documentation = "http://docs.rs/bitcoin-rpc/"
-description = "Bitcoin Rpc API client for rust."
+description = "Dogecoin Rpc API client for rust."
 
 [dependencies]
 jsonrpc-client-core = { git = "https://github.com/DR-BoneZ/jsonrpc-client-rs.git" }
