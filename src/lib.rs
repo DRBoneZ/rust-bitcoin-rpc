@@ -20,14 +20,11 @@ pub struct Block {
     pub confirmations: i64,
     pub strippedsize: i64,
     pub size: i64,
-    pub weight: i64,
     pub height: i64,
     pub version: i64,
-    pub version_hex: String,
     pub merkleroot: String,
     pub tx: Vec<String>,
     pub time: i64,
-    pub mediantime: i64,
     pub nonce: i64,
     pub bits: String,
     pub difficulty: serde_json::Number,
@@ -36,28 +33,28 @@ pub struct Block {
     pub nextblockhash: Option<String>,
 }
 
-#[derive(Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct FullBlock {
-    pub hash: String,
-    pub confirmations: i64,
-    pub strippedsize: i64,
-    pub size: i64,
-    pub weight: i64,
-    pub height: i64,
-    pub version: i64,
-    pub version_hex: String,
-    pub merkleroot: String,
-    pub tx: Vec<Transaction>,
-    pub time: i64,
-    pub mediantime: i64,
-    pub nonce: i64,
-    pub bits: String,
-    pub difficulty: serde_json::Number,
-    pub chainwork: String,
-    pub previousblockhash: Option<String>,
-    pub nextblockhash: Option<String>,
-}
+// #[derive(Deserialize)]
+// #[serde(rename_all = "camelCase")]
+// pub struct FullBlock {
+//     pub hash: String,
+//     pub confirmations: i64,
+//     pub strippedsize: i64,
+//     pub size: i64,
+//     pub weight: i64,
+//     pub height: i64,
+//     pub version: i64,
+//     pub version_hex: String,
+//     pub merkleroot: String,
+//     pub tx: Vec<Transaction>,
+//     pub time: i64,
+//     pub mediantime: i64,
+//     pub nonce: i64,
+//     pub bits: String,
+//     pub difficulty: serde_json::Number,
+//     pub chainwork: String,
+//     pub previousblockhash: Option<String>,
+//     pub nextblockhash: Option<String>,
+// }
 
 #[derive(Deserialize)]
 pub struct Transaction {
