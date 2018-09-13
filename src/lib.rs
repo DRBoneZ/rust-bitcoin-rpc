@@ -57,15 +57,12 @@ pub struct Block {
 
 #[derive(Deserialize)]
 pub struct Transaction {
+    pub hex: String,
     pub txid: String,
-    pub hash: String,
     pub version: i64,
-    pub size: i64,
-    pub vsize: i64,
     pub locktime: i64,
     pub vin: Vec<Vin>,
     pub vout: Vec<Vout>,
-    pub hex: String,
     pub blockhash: Option<String>,
     pub confirmations: Option<i64>,
     pub time: Option<i64>,
@@ -211,8 +208,8 @@ pub struct TxOutSetInfo {
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum GetRawTransactionReply {
-    True(Transaction),
-    False(SerializedData),
+    Zero(SerializedData),
+    One(Transaction),
 }
 
 #[derive(Deserialize)]
@@ -244,7 +241,7 @@ jsonrpc_client!(pub struct BitcoinRpcClient {
     pub fn getblockchaininfo(&mut self) -> RpcRequest<BlockChainInfo>;
     pub fn getblockcount(&mut self) -> RpcRequest<i64>;
     pub fn getblockhash(&mut self, block_height: i64) -> RpcRequest<String>;
-    pub fn getrawtransaction(&mut self, txid: String, verbose: bool) -> RpcRequest<GetRawTransactionReply>;
+    pub fn getrawtransaction(&mut self, txid: String, verbosity: i64) -> RpcRequest<GetRawTransactionReply>;
     pub fn gettxout(&mut self, txid: String, vout: i64, unconfirmed: bool) -> RpcRequest<GetTxOutReply>;
     pub fn getrawmempool(&mut self, format: bool) -> RpcRequest<RawMemPool>;
 });
